@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Kacy Diep">
+  <meta name="description" content="An open collection of tunes and unsaid thoughts">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/browser-favicon.png">
+
+
+   <!-- link to external stylesheets -->
+   <link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&family=Manrope&family=Readex+Pro:wght@300&display=swap" rel="stylesheet">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- animated typing js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+  <title>the archived playlist</title>
+</head>
+
+
+
+<body>
+    
+    <div class="docBody">
+
+        <!--navigation bar-->
+        <div class="navbar">
+            <a class="navlink" href=index.html style="font-family: 'Times New Roman', Times, serif; font-size: 18px; color: #b5b1ac;">
+                <em>the archived playlist</em>
+            </a>
+        </div>
+
+        <div class="spacer">
+            <br><br>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col my-auto">
+                    <span style="font-family: 'Inter', sans-serif; font-size: 54px; color: #b5b1ac;">
+                        welcome to
+                        <span style="font-family:'Times New Roman', Times, serif; color: #b5b1ac;">
+                            THE ARCHIVE,
+                        </span>
+                        <br>a collection of tunes and unsaid thoughts — curated by  
+
+                        <span class="type" style="font-family: 'Inter', sans-serif; font-size: 54px; color: #b5b1ac;">
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="row">
+                <div class="col my-auto">
+                    <span style="font-family: 'Inter', sans-serif; font-weight: 300; font-size: 28px; color: #b5b1ac;">
+                        created dec 2021
+                    </span>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col my-auto">
+                    <a href="addtoplaylist.html" role="button" class="btn btn-outline-dark btn-lg">add to playlist</a>
+                </div>
+            </div>
+
+        </div>
+    
+        <div class="spacer">
+            <br><br>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col my-auto">
+                    <span style="font-family: 'Inter', sans-serif; font-weight: 300; font-size: 42px; color: #b5b1ac;">
+                        Now Playing
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col my-auto">
+                    <div class="tunes">
+                        <!-- inject songs/tunes here from js -->
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="spacer">
+            <br><br>
+        </div>
+
+
+    </div>
+
+    <!-- animated typing in intro -->
+    <script>
+        var typed = new Typed(".type", {
+            strings: [
+                "",
+                "anyone",
+                "everyone",
+                "no one"
+            ],
+            typeSpeed: 40,
+            backSpeed: 40,
+            loop: true
+        });
+    </script>
+
+    <script src="js/index.js">
+
+    </script>
+
+</body>
+</html>

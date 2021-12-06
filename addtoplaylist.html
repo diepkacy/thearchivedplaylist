@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Kacy Diep">
+  <meta name="description" content="An open collection of tunes and unsaid thoughts">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/browser-favicon.png">
+
+
+   <!-- link to external stylesheets -->
+   <link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&family=Manrope&family=Readex+Pro:wght@300&display=swap" rel="stylesheet">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- animated typing js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+  <title>Add To Playlist</title>
+</head>
+
+<style>
+  body {
+      animation: fadeInAnimation ease 3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      background-color: #f1f1f1;
+  }
+  @keyframes fadeInAnimation {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+  }
+</style>
+
+<body>
+
+    <div class="formBody">
+
+      <!--navigation bar-->
+      <div class="navbar">
+        <a class="navlink" href=index.html style="font-family: 'Times New Roman', Times, serif; font-size: 18px; color: #5A3838;">
+            <em>the archived playlist</em>
+        </a>
+      </div>
+
+      <div class="spacer">
+        <br><br>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col text-center my-auto">
+            <span class="type" style="font-family: 'Inter', sans-serif; font-size: 42px; color: #5A3838;">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+      
+      <div class="playlistForm">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center my-auto">
+              <form>
+                <input type="text" name="tuneURL" required placeholder="Enter a Spotify URI (i.e. paste your song link)">
+                <textarea type="text" id="note" name="note" maxlength="270" required placeholder="Attach a note to your archived tune"></textarea>
+                <span class="pull-right label label-default" id="count_message"></span>
+                <br><br>
+                <button type="submit">Add to playlist</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="spacer">
+        <br><br>
+      </div>
+
+    </div>
+
+    <!-- animated typing in intro -->
+    <script>
+      var typed = new Typed(".type", {
+          strings: [
+              "",
+              "for getting in the groove.",
+              "for pure distraction and escapism.",
+              "for those long commutes.",
+              "for remembered experiences.",
+              "what's it to you?"
+          ],
+          typeSpeed: 40,
+          backSpeed: 40,
+          loop: false,
+      });
+    </script>
+
+    <!-- character count for text area form -->
+    <script>
+      var text_max = 270;
+      $('#count_message').html('0 / ' + text_max );
+
+      $('#note').keyup(function() {
+        var text_length = $('#note').val().length;
+        var text_remaining = text_max - text_length;
+        
+        $('#count_message').html(text_length + ' / ' + text_max);
+      });
+    </script>
+
+    <!-- script for adding to playlist -->
+    <script src="js/addtoplaylist.js"></script>
+
+</body>
+
+</html>

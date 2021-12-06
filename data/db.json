@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "postedAt": "Added less than a day ago",
+      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas",
+      "spotifyURI": "https://open.spotify.com/track/7zDu3l7DDlfSlt20YMKkWo?si=ef5af63d9c854d7b"
+    },
+    {
+      "id": 2,
+      "postedAt": "Added less than a day ago",
+      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas",
+      "spotifyURI": "https://open.spotify.com/track/63CGV6P4cEYZvUgvVhZWAl?si=cd61b4c84f294e11"
+    },
+    {
+      "id": 3,
+      "postedAt": "Added less than a day ago",
+      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas",
+      "spotifyURI": "https://open.spotify.com/track/1NCUe90ZCiWTnWn3umrwqw?si=59ddcc82a747490b"
+    },
+    {
+      "postedAt": "2021-12-06T17:25:41.586Z",
+      "body": "i love this song",
+      "spotifyURI": "https://open.spotify.com/track/6z9zXftDgpnyZYL2KiRTHZ?si=84ace49f85b4442a",
+      "id": 4
+    }
+  ]
+}

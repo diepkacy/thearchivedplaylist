@@ -1,0 +1,118 @@
+.docBody {
+  background-color: #000000;
+  color: #b5b1ac;
+}
+
+.formBody {
+    background-color: #f1f1f1;
+    color: #5A3838;
+}
+
+.docBody, .formBody {
+    padding: 2%;
+}
+
+
+/* nav bar */
+.navbar {
+    background-color: #000000;
+    color: #b5b1ac;
+}
+
+.formBody .navbar {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+a.navlink:hover {
+    text-decoration: none;
+    opacity: 25%;
+    color: #b5b1ac;
+}
+
+
+/* spacer */
+.docBody .spacer {
+    margin: 4%;
+}
+
+.formBody .spacer {
+    margin: 4%;
+}
+
+
+/* buttons */
+.docBody .btn:hover {
+    background-color: #b5b1ac;
+    color:#000000;
+}
+
+.docBody .btn {
+    color: #b5b1ac;
+    border-radius: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 26px;
+}
+
+
+/* "add to playlist" form */
+@media (min-width: 1200px) {
+    .formBody .playlistForm .container {
+        width: 700px;
+    }
+}
+
+.docBody .playlistForm .input-group {
+    font-size: 16px;
+}
+
+input {
+    background-color: #f1f1f1 !important;
+}
+
+textarea {
+    background-color: #f1f1f1 !important;
+}
+
+
+.btn-primary {
+    background-color: #5A3838 !important;
+    color: #f1f1f1 !important;
+    border: #5A3838 !important;
+}
+
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+textarea[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type=submit], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #5A3838;
+    color: #f1f1f1;
+}
+  
