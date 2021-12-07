@@ -23,7 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 
-  <title>Add To Playlist</title>
+  <title>add to playlist</title>
 </head>
 
 <style>
@@ -74,12 +74,26 @@
           <div class="row">
             <div class="col text-center my-auto">
               <form>
-                <input type="text" name="tuneURL" required placeholder="Enter a Spotify URI (i.e. paste your song link)">
-                <textarea type="text" id="note" name="note" maxlength="270" required placeholder="Attach a note to your archived tune"></textarea>
+                <input type="url" name="tuneURL" required placeholder="Enter a Spotify track URL (i.e. paste your song link)" required pattern="^(https:\/\/open[.]spotify[.]com\/)(track|album|playlist)\/.([^\/]+$)" oninvalid="this.setCustomValidity('Invalid format: Please enter a Spotify track URL')" oninput="this.setCustomValidity('')">
+                <textarea type="text" id="note" name="note" maxlength="270" rows="5" required placeholder="Attach a note to your archived tune"></textarea>
                 <span class="pull-right label label-default" id="count_message"></span>
                 <br><br>
                 <button type="submit">Add to playlist</button>
+                <input type="button" value="Show preview for Spotify Embed" onclick="showSpotifyEmbed()"> 
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="playlistForm">
+        <div class="container">
+          <div class='row'>
+            <div class="col text-center my-auto">
+              <div class="displaySpotifyEmbed">
+              </div>
             </div>
           </div>
         </div>
@@ -124,6 +138,42 @@
 
     <!-- script for adding to playlist -->
     <script src="js/addtoplaylist.js"></script>
+
+    <!-- display preview for spotify embed -->
+    <script>
+      function showSpotifyEmbed() {
+        const form = document.querySelector('form');
+        const container = document.querySelector('.displaySpotifyEmbed');
+        var template = '';
+
+        const regex = '^(https:\/\/open[.]spotify[.]com\/)(track|album|playlist)\/.([^\/]+$)';
+
+        if (form.tuneURL.value.match(regex)) {
+          var embedTrack = "https://open.spotify.com/embed/track/";
+          var trackURI = form.tuneURL.value;
+          trackURI = trackURI.replace("https://open.spotify.com/track/", "");
+          trackURI = trackURI.split('?');
+          embedTrack += trackURI[0];
+
+          template += `
+            <div style="border-radius: 10px; overflow: hidden;">  
+              <iframe src=${embedTrack} width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+          `
+        }
+
+        else {
+          template += `
+            <div style="font-family: 'Inter', sans-serif; font-size: 16px; color: #5A3838;">
+              <br>Invalid format: Please enter a Spotify track URL 
+            </div>
+          `
+        }
+
+        container.innerHTML = template;
+      }
+    </script>
+
 
 </body>
 

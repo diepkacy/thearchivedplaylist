@@ -3,7 +3,7 @@ const container = document.querySelector('.tunes');
 
 
 const renderPosts = async () => {
-    let uri = 'http://localhost:3000/posts';
+    let uri = 'http://localhost:3000/posts?_sort=postedAt&_order=desc';
 
     const res = await fetch(uri);
     const posts = await res.json();
@@ -14,6 +14,7 @@ const renderPosts = async () => {
     let template = '';
     posts.forEach(post => {
 
+        // display/embed spotify media player
         var embedTrack = "https://open.spotify.com/embed/track/";
         var trackURI = post.spotifyURI;
         trackURI = trackURI.replace("https://open.spotify.com/track/", "");
@@ -23,13 +24,35 @@ const renderPosts = async () => {
         // for testing purposes
         console.log(embedTrack);
 
+
+        // display date added (i.e. Added less than a day ago)
+        var currentDate = new Date();
+        var dateAdded = new Date(post.postedAt);
+
+        var timeElapsed = 0;
+
+        // one day is measured in (hours*minutes*seconds*milliseconds)
+        timeElapsed = Math.floor((currentDate - dateAdded) / (24 * 60 * 60 * 1000)); 
+        var timeElapsedStr = "";
+
+        if (timeElapsed <= 1) {
+            timeElapsedStr += "Added less than a day ago"
+        }
+        else {
+            timeElapsedStr += "Added " + timeElapsed + " days ago"
+        }
+
+
+
         template += `
-            <div class="card" style="background-color: #000000; border-color: #757575; margin-top: 4%; margin-bottom: 4%; padding-left:2%; padding-right: 2%; padding-top: 4%; padding-bottom: 4%">
+            <div class="card">
                 <div class="container-fluid">
                 
                     <div class="row align-items-start">
                         <div class="col-md-6">
-                            <iframe src=${embedTrack} width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <div style="border-radius: 5px; overflow: hidden;">
+                                <iframe src=${embedTrack} width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            </div>        
                         </div>
                         
                         <br><br>
@@ -37,7 +60,7 @@ const renderPosts = async () => {
                         <div class="col-md-6">
                             ${post.body}
                             <br><br>
-                            <em>${post.postedAt}</em>
+                            <em>${timeElapsedStr}</em>
                         </div>
                     </div>
 
